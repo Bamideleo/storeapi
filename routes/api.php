@@ -17,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::apiresource('/products',\App\Http\Controllers\ProductController::class);
+Route::group(['prefix'=>'product'], function (){
+Route::apiresource('/{product}/review',\App\Http\Controllers\ReviewController::class);
+});
