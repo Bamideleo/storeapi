@@ -8,7 +8,10 @@ use  App\Models\Review;
 
 class Product extends Model
 {
+  
     use HasFactory;
+
+    // protected $fillable = ["name", "details","discount","price","stock"];
 
     public function reviews()
     {
